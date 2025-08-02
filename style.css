@@ -14,14 +14,27 @@ body{
 }
 
 .display{
-    display: flex;
     height: 70px;
     background-color:slategray;
     color: chartreuse;
+    text-align: right;
+    font-size: 40px;
     padding: 8px;
     border-radius: 30px;
     margin-bottom:40px ;
     margin-top: 20px;
+}
+.previous{
+    color:cornsilk;
+    font-size: large;
+    font-weight: 200;
+    padding: 3px 16px;
+}
+.result{
+    color: azure;
+    font-weight: 900;
+    font-size: xx-large;
+    padding: 6px 16px;
 }
 
 .extra{
