@@ -39,6 +39,7 @@ function handleNum(value){
     else{
         secondNum += value;
         resultDisp.textContent = secondNum;
+        previousDisp.textContent = `${firstNum} ${operator}`;
     }
 }
 
@@ -71,7 +72,9 @@ function handleOperator(value){
         resultDisp.textContent = "";        
     }
     operator = value;
-    previousDisp.textContent = `${firstNum} ${operator}`;
+    previousDisp.textContent = `${firstNum} `;
+    resultDisp.textContent=`${operator}`;
+
 }
 
 function handleEqual(value){
@@ -127,15 +130,26 @@ function handleClr(){
     resultDisplay = false;
 }
 
-function handleDelete(){
-    if(resultDisplay) return;
+function handleDelete() {
+    if (resultDisplay) return;
 
-    if(operator === "") {
+    if (secondNum !== "") {
+        secondNum = secondNum.slice(0, -1);
+        if(secondNum === ""){
+            resultDisp.textContent =  operator;
+            previousDisp.textContent = `${firstNum}`;
+        }
+        else{
+            resultDisp.textContent = secondNum;
+            previousDisp.textContent = `${firstNum} ${operator}`;
+        }
+    } else if (operator !== "") {
+        operator = "";
+        resultDisp.textContent = firstNum;
+        previousDisp.textContent = "";
+    } else {
         firstNum = firstNum.slice(0, -1);
         resultDisp.textContent = firstNum;
-    } else {
-        secondNum = secondNum.slice(0, -1);
-        resultDisp.textContent = secondNum;
     }
 }
 

@@ -29,8 +29,10 @@ body{
     font-size: large;
     font-weight: 200;
     padding: 3px 16px;
+    min-height: 20px;
 }
 .result{
+    min-height: fit-content;
     color: azure;
     font-weight: 900;
     font-size: xx-large;
